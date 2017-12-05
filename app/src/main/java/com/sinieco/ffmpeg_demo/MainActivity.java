@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void decode(View view){
         String inPath = Environment.getExternalStorageDirectory()+ File.separator+"input.mp4";
-        String outPath = Environment.getExternalStorageDirectory()+ File.separator+"720x1280_output.mp4";
+        String outPath = Environment.getExternalStorageDirectory()+ File.separator+"720x1280_output.yuv";
         VideoUtils.decode(inPath,outPath);
     }
 
