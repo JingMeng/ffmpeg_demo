@@ -11,12 +11,16 @@ find_library( # Sets the name of the path variable.
 
 SET(distribution_DIR ../../../../libs)
 
+
 add_library( # Sets the name of the library.
-             myffmpeg
+             # myffmpeg
+             myplayer
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/cpp/ffmpeg_player.c )
+             # src/main/cpp/ffmpeg_decoder.c
+              src/main/cpp/my_player.c
+              src/main/cpp/audio_player.c)
 
 
 add_library(avcodec-56
@@ -91,13 +95,25 @@ set_target_properties(swscale-3
                       PROPERTIES IMPORTED_LOCATION
                       ${distribution_DIR}/armeabi/libswscale-3.so)
 
+add_library(yuv
+            SHARED
+            IMPORTED )
+
+set_target_properties(yuv
+                      PROPERTIES IMPORTED_LOCATION
+                      ${distribution_DIR}/armeabi/libyuv.so)
 
 
 
-include_directories(src/main/cpp/include)
+include_directories(src/main/cpp/ffmpeg/include)
+include_directories(src/main/cpp/libyuv/include)
 
 target_link_libraries( # Specifies the target library.
-                       myffmpeg
+                      # myffmpeg
+                       myplayer
+                       -ljnigraphics
+                       -landroid # Add this.
+                       yuv
                        avcodec-56
                        avdevice-56
                        avfilter-5

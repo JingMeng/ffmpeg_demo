@@ -7,13 +7,13 @@
 #include <android/log.h>
 
 //编码
-#include "include/libavcodec/avcodec.h"
+#include "libavcodec/avcodec.h"
 //封装格式处理
-#include "include/libavformat/avformat.h"
+#include "libavformat/avformat.h"
 //像素处理
-#include "include/libswscale/swscale.h"
-#include "include/libavutil/avutil.h"
-#include "include/libavutil/frame.h"
+#include "libswscale/swscale.h"
+#include "libavutil/avutil.h"
+#include "libavutil/frame.h"
 
 #define LOGI(FORMAT,...) __android_log_print(ANDROID_LOG_INFO,"jason",FORMAT,##__VA_ARGS__);
 #define LOGE(FORMAT,...) __android_log_print(ANDROID_LOG_ERROR,"jason",FORMAT,##__VA_ARGS__);

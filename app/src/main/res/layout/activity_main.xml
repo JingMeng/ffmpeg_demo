@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.sinieco.ffmpeg_demo.MainActivity">
 
+    <!--<com.sinieco.ffmpeg_demo.VideoView-->
+        <!--android:id="@+id/video_view"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"/>-->
     <Button
-        android:onClick="decode"
+        android:layout_gravity="bottom|center_horizontal"
+        android:onClick="play"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="jiema" />
+        android:text="play"/>
 
-</android.support.constraint.ConstraintLayout>
+</FrameLayout>
