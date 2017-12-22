@@ -1,6 +1,8 @@
 package com.sinieco.ffmpeg_demo;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.PixelFormat;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
@@ -22,6 +24,7 @@ public class VideoView extends SurfaceView {
     public VideoView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+        Bitmap bitmap = BitmapFactory.decodeFile(null,null);
     }
 
     private void init() {

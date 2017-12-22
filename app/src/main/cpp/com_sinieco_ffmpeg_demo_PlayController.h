@@ -23,6 +23,14 @@ JNIEXPORT void JNICALL Java_com_sinieco_ffmpeg_1demo_PlayController_render
 JNIEXPORT void JNICALL Java_com_sinieco_ffmpeg_1demo_PlayController_sound
   (JNIEnv *, jobject, jstring, jstring);
 
+/*
+ * Class:     com_sinieco_ffmpeg_demo_PlayController
+ * Method:    play
+ * Signature: (Ljava/lang/String;Landroid/view/Surface;)V
+ */
+JNIEXPORT void JNICALL Java_com_sinieco_ffmpeg_1demo_PlayController_play
+  (JNIEnv *, jobject, jstring, jobject);
+
 #ifdef __cplusplus
 }
 #endif

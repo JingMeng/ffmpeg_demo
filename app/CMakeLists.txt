@@ -19,8 +19,10 @@ add_library( # Sets the name of the library.
 
              # Provides a relative path to your source file(s).
              # src/main/cpp/ffmpeg_decoder.c
-              src/main/cpp/my_player.c
-              src/main/cpp/audio_player.c)
+             # src/main/cpp/my_player.c
+             # src/main/cpp/audio_player.c
+              src/main/cpp/audio_video_player.c
+              src/main/cpp/play_sound_on_audiotrack.c)
 
 
 add_library(avcodec-56

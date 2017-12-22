@@ -15,12 +15,26 @@ public class PlayController {
 
     public native void sound(String inputPath , String outPath );
 
-    public AudioTrack createAudioTrack(){
-        int sampleRateInHz = 44100 ;
+    public native void play(String inputPath ,Surface surface);
+
+    //C代码中调用本方法播放音频
+    public AudioTrack createAudioTrack(int sampleRateInHz , int nb_channels){
         int audioFormat = AudioFormat.ENCODING_PCM_16BIT ;
-        int channelConfig = AudioFormat.CHANNEL_OUT_STEREO;
+        int channelConfig ;
+        if(nb_channels == 1){
+            channelConfig = AudioFormat.CHANNEL_OUT_MONO ;
+        }else if(nb_channels == 2){
+            channelConfig = AudioFormat.CHANNEL_OUT_STEREO ;
+        }else {
+            channelConfig = AudioFormat.CHANNEL_OUT_STEREO ;
+        }
         int minBufferSize = AudioTrack.getMinBufferSize(sampleRateInHz, channelConfig, audioFormat);
-        return new  AudioTrack(AudioManager.STREAM_MUSIC,sampleRateInHz,channelConfig,audioFormat,minBufferSize,AudioTrack.MODE_STREAM);
+        return new  AudioTrack(AudioManager.STREAM_MUSIC,
+                sampleRateInHz,
+                channelConfig,
+                audioFormat,
+                minBufferSize,
+                AudioTrack.MODE_STREAM);
     }
 
     static {

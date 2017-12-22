@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        video = (VideoView)findViewById(R.id.video_view);
+        video = (VideoView)findViewById(R.id.video_view);
         XPermissionUtils.requestPermissions(this, 0, new String[]{
                 Manifest.permission.READ_EXTERNAL_STORAGE,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -55,9 +55,12 @@ public class MainActivity extends AppCompatActivity {
 
     //音频解码
     public void play(View view){
-        String inPath = Environment.getExternalStorageDirectory()+ File.separator+"input.mp3";
-        String outPath = Environment.getExternalStorageDirectory()+ File.separator+"output.pcm";
-        controller.sound(inPath,outPath);
+//        String inPath = Environment.getExternalStorageDirectory()+ File.separator+"input.mp3";
+//        String outPath = Environment.getExternalStorageDirectory()+ File.separator+"output.pcm";
+//        controller.sound(inPath,outPath);
+        String inPath = Environment.getExternalStorageDirectory()+ File.separator+"input.mp4";
+        Surface surface = video.getHolder().getSurface();
+        controller.play(inPath,surface);
     }
 
 
