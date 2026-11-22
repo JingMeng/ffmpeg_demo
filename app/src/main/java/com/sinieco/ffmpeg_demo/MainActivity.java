@@ -2,7 +2,7 @@ package com.sinieco.ffmpeg_demo;
 
 import android.Manifest;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Surface;
 import android.view.View;

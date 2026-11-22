@@ -9,7 +9,7 @@ find_library( # Sets the name of the path variable.
               # you want CMake to locate.
               log )
 
-SET(distribution_DIR ../../../../libs)
+SET(distribution_DIR ${CMAKE_CURRENT_LIST_DIR}/libs)
 
 
 add_library( # Sets the name of the library.
